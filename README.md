@@ -1,4 +1,4 @@
-# {{project-name}} - Readme
+# template-rest - Readme
 
 Here's a rundown of where to put your code, see each file for more information:
 

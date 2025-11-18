@@ -1,7 +1,7 @@
 {
-	"name": "{{project-name}}",
+	"name": "template-rest",
 	"version": "1.0.0",
-	"description": "{{project-name}}",
+	"description": "template-rest",
 	"typescript-template": {
 		"base": "1.0.1",
 		"jasmine": "1.0.0",
@@ -48,13 +48,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/{{project-org}}/{{project-name}}.git"
+		"url": "git+https://github.com/template-rest/template-rest.git"
 	},
-	"author": "{{project-org}}",
+	"author": "template-rest",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/{{project-org}}/{{project-name}}/issues"
+		"url": "https://github.com/template-rest/template-rest/issues"
 	},
-	"homepage": "https://github.com/{{project-org}}/{{project-name}}#readme",
+	"homepage": "https://github.com/template-rest/template-rest#readme",
 	"keywords": []
 }
