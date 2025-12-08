@@ -1,10 +1,11 @@
 import { RiaoRouter } from '@riao/rest';
 import { HealthCheckEndpoint, RestServer } from 'api-machine';
 import { env } from '../env';
+import { ApiRouter } from './router';
 
 export class ServiceRouter extends RiaoRouter {
 	override async routes() {
-		return [HealthCheckEndpoint];
+		return [ApiRouter, HealthCheckEndpoint];
 	}
 }
 
