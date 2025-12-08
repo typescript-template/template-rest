@@ -1,5 +1,4 @@
 import { RiaoRouter } from '@riao/rest';
-import { HealthCheckEndpoint } from 'api-machine';
 
 export class V1Router extends RiaoRouter {
 	override path = '/v1';
@@ -15,6 +14,6 @@ export class ApiRouter extends RiaoRouter {
 	override path = '/api';
 
 	protected override async routes() {
-		return [HealthCheckEndpoint];
+		return [V1Router];
 	}
 }
