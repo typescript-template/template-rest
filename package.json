@@ -1,6 +1,6 @@
 {
 	"name": "template-rest",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "template-rest",
 	"typescript-template": {
 		"base": "1.0.1",
