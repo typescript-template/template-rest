@@ -1,6 +1,6 @@
-import { DatabaseMySql8 } from '@riao/mysql';
+import { DatabasePostgres18 } from '@riao/postgres';
 
-export default class MainDatabase extends DatabaseMySql8 {
+export default class MainDatabase extends DatabasePostgres18 {
 	override name = 'main';
 }
 
