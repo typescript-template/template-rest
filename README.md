@@ -11,3 +11,5 @@ Here's a rundown of where to put your code, see each file for more information:
 ## Contributing & Development
 
 See [contributing.md](docs/contributing/contributing.md) for information on how to develop or contribute to this project!
+
+If you want to run this app in Docker, see the [Docker Guide](docs/docker.md).

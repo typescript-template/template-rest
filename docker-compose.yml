@@ -1,0 +1,51 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rest-server
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migration:
+        condition: service_completed_successfully
+    ports:
+      - "4000:4000"
+    environment:
+      NODE_ENV: production
+      MAIN_DB_HOST: postgres
+
+  postgres:
+    image: postgres:17
+    container_name: rest-db
+    environment:
+      POSTGRES_DB: server-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d server-db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+    volumes:
+      - rest_postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  migration:
+    build:
+      context: .
+      dockerfile: Dockerfile.migration
+    container_name: rest-migration
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      MAIN_DB_HOST: postgres
+    command: ["npx", "riao", "migration:run"]
+    restart: "no"
+
+volumes:
+  rest_postgres_data:
