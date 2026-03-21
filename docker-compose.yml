@@ -3,6 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: test
+    container_name: {{project-name}}
     environment:
       NODE_ENV: production
